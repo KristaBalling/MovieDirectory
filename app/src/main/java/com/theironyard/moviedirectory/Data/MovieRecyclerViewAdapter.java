@@ -14,7 +14,6 @@ import com.squareup.picasso.Picasso;
 import com.theironyard.moviedirectory.Model.Movie;
 import com.theironyard.moviedirectory.R;
 
-import org.w3c.dom.Text;
 
 import java.util.List;
 
