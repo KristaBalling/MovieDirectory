@@ -155,7 +155,7 @@ public class MainActivity extends AppCompatActivity {
             movieList.clear();
 
             JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET,
-                    Constants.URL_LEFT + searchTerm + Constants.URL_RIGHT + Constants.API_KEY, new Response.Listener<JSONObject>() {
+                  Constants.URL_LEFT + searchTerm + Constants.URL_RIGHT + Constants.API_KEY, new Response.Listener<JSONObject>() {
                 @Override
                 public void onResponse(JSONObject response) {
 

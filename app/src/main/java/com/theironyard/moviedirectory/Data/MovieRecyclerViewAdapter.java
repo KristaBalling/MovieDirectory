@@ -1,6 +1,7 @@
 package com.theironyard.moviedirectory.Data;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -11,6 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.squareup.picasso.Picasso;
+import com.theironyard.moviedirectory.Activities.MovieDetailActivity;
 import com.theironyard.moviedirectory.Model.Movie;
 import com.theironyard.moviedirectory.R;
 
@@ -69,7 +71,7 @@ public class MovieRecyclerViewAdapter extends RecyclerView.Adapter<MovieRecycler
         TextView year;
         TextView type;
 
-        public ViewHolder(View itemView, Context ctx) {
+        public ViewHolder(View itemView, final Context ctx) {
             super(itemView);
             context = ctx;
 
@@ -81,6 +83,14 @@ public class MovieRecyclerViewAdapter extends RecyclerView.Adapter<MovieRecycler
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+
+                    Movie movie = movieList.get(getAdapterPosition());
+
+                    Intent intent = new Intent(context, MovieDetailActivity.class);
+
+                    intent.putExtra("movie", movie);
+
+                    ctx.startActivity(intent);
 
                     Toast.makeText(context, "Row Tapped!", Toast.LENGTH_LONG).show();
 
