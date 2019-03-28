@@ -10,7 +10,7 @@ public class Prefs {
         sharedPreferences = activity.getPreferences(activity.MODE_PRIVATE);
     }
 
-    public void setShared(String search) {
+    public void setSearch(String search) {
         sharedPreferences.edit().putString("search", search).commit();
     }
 
